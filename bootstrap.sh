@@ -13,21 +13,21 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again p
 sudo apt-get update
 
 sudo apt-get -y install apache2
-sudo apt-get -y install php7.0
-sudo apt-get -y install libapache2-mod-php7.0
+sudo apt-get -y install php8.2
+sudo apt-get -y install libapache2-mod-php8.2
 sudo apt-get -y install mysql-server
-sudo apt-get -y install php7.0-fpm
-sudo apt-get -y install php7.0-mysqlnd
-sudo apt-get -y install php7.0-mysql
+sudo apt-get -y install php8.2-fpm
+sudo apt-get -y install php8.2-mysqlnd
+sudo apt-get -y install php8.2-mysql
 sudo apt-get -y install curl
-sudo apt-get -y install php7.0-curl
-sudo apt-get -y install php7.0-gd
-sudo apt-get -y install php7.0-mbstring
-sudo apt-get -y install php7.0-mod
+sudo apt-get -y install php8.2-curl
+sudo apt-get -y install php8.2-gd
+sudo apt-get -y install php8.2-mbstring
+sudo apt-get -y install php8.2-mod
 
 sudo cp /vagrant/setup/000-default.conf /etc/apache2/sites-available/
-sudo cp /vagrant/setup/php.ini /etc/php/7.0/fpm/php.ini
-sudo cp /vagrant/setup/php-apache.ini /etc/php/7.0/apache2/php.ini
+sudo cp /vagrant/setup/php.ini /etc/php/8.2/fpm/php.ini
+sudo cp /vagrant/setup/php-apache.ini /etc/php/8.2/apache2/php.ini
 sudo cp /vagrant/setup/apache2.conf /etc/apache2/apache2.conf
 sudo a2enmod rewrite
 mysql -uroot -proot -e 'create database IF NOT EXISTS `wordpress`;'
